@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+	<body>
+		</br>
+		<h><b>Title:</b></h>
+		</br>
+			<form method = "post" >
+				<textarea cols="90" rows="1" type="text" name = "Title" >{{title}}</textarea>
+
+		</br> 
+		<h><b>Write Your Thoughts:</b></h>
+		</br>
+			<form method = "post" >
+				<textarea cols="90" rows="10" type="text" name = "UserWriteUp" >{{UserWriteUp}}</textarea>
+		</br>
+		</br>
+		<input type="submit" value="Submit">
+		<div class="error">{{error}}</div>
+			</form>
+		<hr>
+		
+		{% for Blog in UserWriteUp_table %}	
+			<div class="Blog">
+				<div class="UserWriteUp_title">{{Blog.title}}</div>
+				<pre class="blog-body">{{Blog.UserWriteUp}}</pre>
+			</div>
+			<hr>
+		{% endfor %}
+	</body>
+</html>
